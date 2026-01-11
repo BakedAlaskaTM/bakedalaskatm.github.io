@@ -9,6 +9,8 @@
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.6/css/dataTables.dataTables.min.css">
     <script src="https://cdn.datatables.net/2.3.6/js/dataTables.min.js"></script>
     <script src="js/data.js" type="module"></script>
@@ -17,7 +19,15 @@
     <script src="js/tables.js" type="module"></script>
     <script src="js/main.js" type="module"></script>
 </head>
-<body>
-    <table id="main-table"></table>
+<body class="dark bg-gray-900 text-gray-100">
+    <header>
+        <div class="w-4/5 mx-auto mt-8 p-4 shadow-lg flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Dziwnystan Hunt Stats</h1>
+        </div>
+    </header>
+    <div id="container" class="w-4/5 mx-auto p-4 shadow-lg">
+        <button id="back-button" class="hidden mb-4 px-3 py-1 rounded bg-gray-700">← Back to tracks</button>
+        <table id="main-table" class="display w-full"></table>
+    </div>
 </body>
 </html>

@@ -88,17 +88,26 @@ function computeWorldRecords(dedi, tmx) {
 	]);
 
 	for (const trackId of allTrackIds) {
-		let best = Infinity;
+		let bestTime = Infinity;
+		let best = null;
 
 		for (const r of dedi[trackId] ?? []) {
-			if (r.Time < best) best = r.Time;
+			if (r.Time < bestTime) {
+				bestTime = r.Time;
+				best = r;
+				best.Source = 'dedi';
+			}
 		}
 
 		for (const r of tmx[trackId] ?? []) {
-			if (r.Time < best) best = r.Time;
+			if (r.Time < bestTime) {
+				bestTime = r.Time;
+				best = r;
+				best.Source = 'tmx';
+			}
 		}
 
-		if (best !== Infinity) {
+		if (bestTime !== Infinity) {
 			wr[trackId] = best;
 		} else {
 			wr[trackId] = null;

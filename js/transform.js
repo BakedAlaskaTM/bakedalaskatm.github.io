@@ -1,11 +1,65 @@
-export function tracksToTable(tracksJson, worldRecords) {
-  return Object.values(tracksJson).map(track => ({
-    TrackId: track.TrackId,
-    TrackName: track.TrackName,
-    AuthorTime: formatTime(track.AuthorTime),
-    WrTime: formatTime(worldRecords[track.TrackId]) ?? 'N/A',
-    UploadedAt: track.UploadedAt
-  }));
+export function tracksToTable(tracksJson, worldRecords, players) {
+    let rows = [];
+    for (const track of Object.values(tracksJson)) {
+		const wrFaster = isWrFaster(worldRecords[track.TrackId], track.AuthorTime);
+		const wr = worldRecords[track.TrackId] ?? null;
+		let wrPlayer = null;
+		let wrSource = 'N/A';
+		if (wr !== null) {
+			if (wr.Source === 'dedi') {
+				const wrLogin = wr.PlayerLogin ?? null;
+				wrPlayer = players["dedi"][wrLogin] ?? null;
+				wrSource = 'Dedimania';
+			} else if (wr.Source === 'tmx') {
+				const wrId = wr.PlayerId ?? null;
+				wrPlayer = players["tmx"][wrId] ?? null;
+				wrSource = 'TMX';
+			}
+		}
+		rows.push({
+			TrackId: track.TrackId,
+			TrackName: track.TrackName,
+			AuthorTime: formatTime(track.AuthorTime),
+			WrTime: formatTime(worldRecords[track.TrackId]?.Time) ?? 'N/A',
+			WrFaster: wrFaster,
+			WrNickname: wrPlayer ? wrPlayer.Nickname : 'N/A',
+			WrSource: wrSource,
+			UploadedAt: track.UploadedAt
+    	});
+    };
+	return rows;
+}
+
+export function buildRecordsRows(trackId, dediRecords, tmxRecords, players) {
+	const rows = [];
+	console.log(players);
+	// Dedimania
+	if (dediRecords[trackId]) {
+		for (const rec of dediRecords[trackId]) {
+		rows.push({
+			source: 'Dedimania',
+			player: players["dedi"][rec.PlayerLogin] ? players["dedi"][rec.PlayerLogin].Nickname : rec.PlayerLogin,
+			time: formatTime(rec.Time),
+			date: rec.RecordDate,
+			ml: players["dedi"][rec.PlayerLogin] ? players["dedi"][rec.PlayerLogin].TeamML : false
+		});
+		}
+	}
+
+	// TMX
+	if (tmxRecords[trackId]) {
+		for (const rec of tmxRecords[trackId]) {
+		rows.push({
+			source: 'TMX',
+			player: players["tmx"][rec.PlayerId] ? players["tmx"][rec.PlayerId].Nickname : rec.PlayerId,
+			time: formatTime(rec.Time),
+			date: rec.RecordDate,
+			ml: players["tmx"][rec.PlayerId] ? players["tmx"][rec.PlayerId].TeamML : false
+		});
+		}
+	}
+
+	return rows;
 }
 
 function formatTime(ms) {
@@ -23,4 +77,15 @@ function formatTime(ms) {
         const secs = (seconds % 60).toFixed(2).padStart(5, '0');
         return `${hours}:${mins}:${secs}`;
     }
+}
+
+function isWrFaster(wrRec, authorTime) {
+	const wrTime = wrRec?.Time;
+	const wr = wrTime ?? null;
+	const at = authorTime ?? null;
+	let wrFaster = wr < at;
+	if (wr === null) {
+		wrFaster = false;
+	};
+	return wrFaster;
 }

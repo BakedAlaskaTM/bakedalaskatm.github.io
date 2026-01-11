@@ -1,0 +1,116 @@
+/* =========================
+   Base table
+   ========================= */
+
+table.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* =========================
+   LIGHT MODE
+   ========================= */
+
+table.dataTable {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+}
+
+table.dataTable thead th {
+    background-color: #f3f4f6;
+    color: #111827;
+    border-bottom: 1px solid #d1d5db;
+}
+
+table.dataTable tbody tr:nth-child(odd) {
+    background-color: #f9fafb;
+}
+
+table.dataTable tbody tr:hover {
+    background-color: #eff6ff;
+}
+
+/* =========================
+   DARK MODE
+   ========================= */
+
+.dark table.dataTable {
+    background-color: #111827;
+    border: 1px solid #374151;
+}
+
+.dark table.dataTable thead th {
+    background-color: #1f2933;
+    color: #e5e7eb;
+    border-bottom: 1px solid #374151;
+}
+
+.dark table.dataTable tbody tr:nth-child(odd) {
+    background-color: #1f2937;
+}
+
+.dark table.dataTable tbody tr:nth-child(even) {
+    background-color: #111827;
+}
+
+.dark table.dataTable tbody tr:hover {
+    background-color: #374151;
+}
+
+/* =========================
+   Cells
+   ========================= */
+
+table.dataTable th,
+table.dataTable td {
+    padding: 0.5rem 0.75rem;
+}
+
+.dark table.dataTable td {
+    color: #e5e7eb;
+}
+
+/* Pagination buttons */
+.dark .dt-container .dt-paging .dt-paging-button {
+    color: #e5e7eb !important;
+}
+
+.dark .dt-container .dt-paging .dt-paging-button.current {
+    color: #ffffff !important;
+    background-color: #2f363d !important;
+}
+
+.dark .dt-container .dt-paging .dt-paging-button:hover {
+    color: #e5e7eb !important;
+    background: #555e6d !important;
+}
+
+/* Search input */
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #d1d5db;
+    padding: 0.25rem 0.5rem;
+}
+
+.dark .dataTables_wrapper .dataTables_filter input {
+    background-color: #111827;
+    color: #e5e7eb;
+    border-color: #374151;
+}
+
+.dt-input option {
+    background-color: #111827;
+    color: #e5e7eb;
+}
+
+/* Specific Highlighting */
+.dark .wr-gold {
+    background: linear-gradient(90deg, #fde047, #fbbf24);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Dark mode author time */
+.dark .author-time {
+    color: #4ade80; /* green-400 */
+}
