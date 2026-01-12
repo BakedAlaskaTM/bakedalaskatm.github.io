@@ -2,7 +2,8 @@ import {
 	fetchTracks,
 	fetchPlayers,
 	fetchDediRecords,
-	fetchTmxRecords
+	fetchTmxRecords,
+	fetchMLInfo
 } from './data.js';
 
 const state = {
@@ -10,11 +11,12 @@ const state = {
 	players: null,
 	dediRecords: null,
 	tmxRecords: null,
+	mlInfo: null,
 	loaded: false
 };
 
 const derived = {
-  	worldRecords: null
+  	worldRecords: null,
 };
 
 let loadPromise = null;
@@ -27,20 +29,24 @@ export function loadStore() {
 		tracks,
 		players,
 		dediRecords,
-		tmxRecords
+		tmxRecords,
+		mlInfo
 		] = await Promise.all([
 		fetchTracks(),
 		fetchPlayers(),
 		fetchDediRecords(),
-		fetchTmxRecords()
+		fetchTmxRecords(),
+		fetchMLInfo()
 		]);
 
 		state.tracks = tracks;
 		state.players = players;
 		state.dediRecords = dediRecords;
 		state.tmxRecords = tmxRecords;
+		state.mlInfo = mlInfo;
 		state.loaded = true;
 		state.worldRecords = computeWorldRecords(dediRecords, tmxRecords);
+
 
 		return state;
 	})();
@@ -74,6 +80,11 @@ export function getTmxRecords() {
 	return state.tmxRecords;
 }
 
+export function getMLInfo() {
+	if (!state.loaded) throw new Error('Store not loaded');
+	return state.mlInfo;
+}
+
 export function getWorldRecords() {
 	if (!state.loaded) throw new Error('Store not loaded');
 	return state.worldRecords;
@@ -88,30 +99,45 @@ function computeWorldRecords(dedi, tmx) {
 	]);
 
 	for (const trackId of allTrackIds) {
-		let bestTime = Infinity;
-		let best = null;
+        let best = null;
 
-		for (const r of dedi[trackId] ?? []) {
-			if (r.Time < bestTime) {
-				bestTime = r.Time;
-				best = r;
-				best.Source = 'dedi';
-			}
-		}
+        const consider = (r, source) => {
+            if (!best) {
+                best = { ...r, Source: source };
+                return;
+            }
 
-		for (const r of tmx[trackId] ?? []) {
-			if (r.Time < bestTime) {
-				bestTime = r.Time;
-				best = r;
-				best.Source = 'tmx';
-			}
-		}
+            // 1️⃣ Faster time wins
+            if (r.Time < best.Time) {
+                best = { ...r, Source: source };
+                return;
+            }
 
-		if (bestTime !== Infinity) {
-			wr[trackId] = best;
-		} else {
-			wr[trackId] = null;
-		}
-	}
-	return wr;
+            // 2️⃣ Tie on time → earlier date wins
+            if (
+                r.Time === best.Time &&
+                parseDate(r.RecordDate) < parseDate(best.RecordDate)
+            ) {
+                best = { ...r, Source: source };
+            }
+        };
+
+        for (const r of dedi[trackId] ?? []) {
+            consider(r, 'dedi');
+        }
+
+        for (const r of tmx[trackId] ?? []) {
+            consider(r, 'tmx');
+        }
+
+        wr[trackId] = best;
+    }
+    return wr;
+}
+
+function parseDate(dateStr) {
+    const [date, time] = dateStr.split(' ');
+    const [y, m, d] = date.split('-').map(Number);
+    const [hh, mm, ss] = time.split(':').map(Number);
+    return new Date(y, m - 1, d, hh, mm, ss);
 }

@@ -32,7 +32,6 @@ export function tracksToTable(tracksJson, worldRecords, players) {
 
 export function buildRecordsRows(trackId, dediRecords, tmxRecords, players) {
 	const rows = [];
-	console.log(players);
 	// Dedimania
 	if (dediRecords[trackId]) {
 		for (const rec of dediRecords[trackId]) {
@@ -60,6 +59,48 @@ export function buildRecordsRows(trackId, dediRecords, tmxRecords, players) {
 	}
 
 	return rows;
+}
+
+export function buildWrStats(worldRecords, mlInfo, players) {
+	let wrCount = {}
+	for (const login of Object.keys(mlInfo)) {
+		wrCount[login] = 0;
+	}
+	for (const wr of Object.values(worldRecords)) {
+		if (wr === null) {
+			continue;
+		}
+		let wrPlayer = null;
+		if (wr.Source == "dedi") {
+			wrPlayer = lookupPlayer(wr.PlayerLogin, null, mlInfo);
+		} else if (wr.Source == "tmx") {
+			wrPlayer = lookupPlayer(null, wr.PlayerId, mlInfo);
+		}
+		if (wrPlayer !== null) {
+			wrCount[wrPlayer.Login]++;
+		}
+	}
+
+	const rows = [];
+	for (const [login, count] of Object.entries(wrCount)) {
+		rows.push({
+			login: login,
+			nickname: players["dedi"][login]? players["dedi"][login].Nickname : login,
+			count: count
+		});
+	}
+	return rows;
+}
+
+function lookupPlayer(login, id, playerInfo) {
+	for (const player of Object.values(playerInfo)) {
+		if (login == player.Login) {
+			return player;
+		} else if (id == player.TMX) {
+			return player;
+		}
+	}
+	return null;
 }
 
 function formatTime(ms) {

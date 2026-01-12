@@ -1,5 +1,5 @@
 const $ = window.$;
-import { tracksToTable, buildRecordsRows } from './transform.js';
+import { tracksToTable, buildRecordsRows, buildWrStats } from './transform.js';
 
 let currentTable = null; // global variable to store the DataTable instance
 
@@ -19,7 +19,7 @@ export function showTracksTable(tracks, wrs, players) {
                 if (type === 'display') {
                 return `
                     <button
-                    class="track-link hover:underline text-blue-400"
+                    class="track-link hover:underline text-white"
                     data-track-id="${row.TrackId}">
                     ${data}
                     </button>
@@ -57,18 +57,20 @@ export function showTracksTable(tracks, wrs, players) {
             }
         },
         { 
-            title: 'Upload Date', 
-            data: 'UploadedAt' 
+            title: "TMX Link",
+            data: "TrackId",
+            render: function (data, type, row) {
+                if (type == 'display') {
+                    return  `<a href="https://tmnf.exchange/trackshow/${data}" class="underline">TMX</a>`;
+                }
+                return data;
+            }
         }
         ],
         columnDefs: [
             {
-                targets: [1, 3, 4],
-                className: 'text-right'
-            },
-            {
-                targets: [1, 4, 5],
-                className: 'tabular-nums'
+                targets: [1, 4],
+                className: 'text-right tabular-nums'
             }
         ]
     });
@@ -123,6 +125,33 @@ export function showRecordsTable(trackId, dediRecords, tmxRecords, players) {
                     cell.innerHTML = start + i + 1;
                 });
         }
+    });
+}
+
+export function showHomeSummary(worldRecords, mlInfo, players) {
+    resetTable();
+    const rows = buildWrStats(
+        worldRecords,
+        mlInfo,
+        players
+    );
+
+    currentTable = $("#main-table").DataTable({
+        data: rows,
+        order: [
+            [1, 'desc']
+        ],
+        columns: [
+            { title: 'Player', data: 'nickname'},
+            { title: '#WRs', data: 'count'},
+        ],
+        columnDefs: [
+            {
+                targets: [1],
+                className: "tabular-nums"
+            }
+        ],
+        pageLength: 50
     });
 }
 

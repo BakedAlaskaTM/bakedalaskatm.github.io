@@ -22,3 +22,7 @@ export function fetchTmxRecords() {
     return fetchJson('data/tmx_records.json');
 }
 
+export function fetchMLInfo() {
+    return fetchJson('data/ml_info.json');
+}
+
