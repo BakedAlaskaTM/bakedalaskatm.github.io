@@ -143,7 +143,7 @@ export function showHomeSummary(worldRecords, mlInfo, players) {
         ],
         columns: [
             { title: 'Player', data: 'nickname'},
-            { title: '#WRs', data: 'count'},
+            { title: '# WRs', data: 'count'},
         ],
         columnDefs: [
             {
