@@ -107,13 +107,13 @@ function computeWorldRecords(dedi, tmx) {
                 return;
             }
 
-            // 1️⃣ Faster time wins
+            // Faster time wins
             if (r.Time < best.Time) {
                 best = { ...r, Source: source };
                 return;
             }
 
-            // 2️⃣ Tie on time → earlier date wins
+            // Tie on time → earlier date wins
             if (
                 r.Time === best.Time &&
                 parseDate(r.RecordDate) < parseDate(best.RecordDate)
