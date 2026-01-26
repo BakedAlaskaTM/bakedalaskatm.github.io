@@ -30,13 +30,13 @@ main().catch(err => {
 });
 
 document.addEventListener('showTracksTableEvent', () => {
-    showTracksTable(tracks, wrs, players); // tracks is guaranteed to exist here
+    showTracksTable(tracks, wrs, players, mlInfo); // tracks is guaranteed to exist here
 });
 
 document.addEventListener('showStatsPage', () => {
 	$('#wr-progress').addClass('hidden');
     setActiveNav('stats');
-    showTracksTable(tracks, wrs, players);
+    showTracksTable(tracks, wrs, players, mlInfo);
 });
 
 document.addEventListener('showHomePage', () => {

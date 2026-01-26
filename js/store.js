@@ -45,7 +45,7 @@ export function loadStore() {
 		state.tmxRecords = tmxRecords;
 		state.mlInfo = mlInfo;
 		state.loaded = true;
-		state.worldRecords = computeWorldRecords(dediRecords, tmxRecords);
+		state.worldRecords = computeWorldRecords(dediRecords, tmxRecords, players);
 
 
 		return state;
@@ -90,7 +90,7 @@ export function getWorldRecords() {
 	return state.worldRecords;
 }
 
-function computeWorldRecords(dedi, tmx) {
+function computeWorldRecords(dedi, tmx, players) {
 	const wr = {};
 
 	const allTrackIds = new Set([
@@ -99,38 +99,49 @@ function computeWorldRecords(dedi, tmx) {
 	]);
 
 	for (const trackId of allTrackIds) {
-        let best = null;
-
-        const consider = (r, source) => {
-            if (!best) {
-                best = { ...r, Source: source };
-                return;
-            }
-
-            // Faster time wins
-            if (r.Time < best.Time) {
-                best = { ...r, Source: source };
-                return;
-            }
-
-            // Tie on time → earlier date wins
-            if (
-                r.Time === best.Time &&
-                parseDate(r.RecordDate) < parseDate(best.RecordDate)
-            ) {
-                best = { ...r, Source: source };
-            }
-        };
+        const records = [];
 
         for (const r of dedi[trackId] ?? []) {
-            consider(r, 'dedi');
+            records.push({ ...r, Source: 'dedi' });
         }
 
         for (const r of tmx[trackId] ?? []) {
-            consider(r, 'tmx');
+            records.push({ ...r, Source: 'tmx' });
         }
 
-        wr[trackId] = best;
+        if (records.length === 0) {
+            wr[trackId] = null;
+            continue;
+        }
+        // Sort by time, then date
+        records.sort((a, b) => {
+            if (a.Time !== b.Time) return a.Time - b.Time;
+            return parseDate(a.RecordDate) - parseDate(b.RecordDate);
+        });
+        const best = records[0];
+		let wrInML = false;
+		if (best.Source == 'dedi') {
+			wrInML = players['dedi'][best.PlayerLogin].TeamML;
+		} else if (best.Source == 'tmx') {
+			wrInML = players['tmx'][best.PlayerId].TeamML;
+		}
+		let delta = null;
+		let recInML = wrInML;
+		for (const record of records.slice(1)) {
+			if (record.Source == 'dedi') {
+				recInML = players['dedi'][record.PlayerLogin]?.TeamML;
+			} else if (record.Source == 'tmx') {
+				recInML = players['tmx'][record.PlayerId]?.TeamML;
+			}
+			if (recInML != wrInML) {
+				delta = (2*recInML-1)*(record.Time - best.Time);
+				break;
+			}
+		}
+		wr[trackId] = {
+			...best,
+			Delta: delta
+		};
     }
     return wr;
 }

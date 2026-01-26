@@ -16,14 +16,20 @@ export function tracksToTable(tracksJson, worldRecords, players) {
 				wrSource = 'TMX';
 			}
 		}
+		let wrLoginOrId = wrPlayer ? wrPlayer.Id : 'N/A';
+		if (wrSource == "Dedimania") {
+			wrLoginOrId = wrPlayer ? wrPlayer.Login : 'N/A';
+		}
 		rows.push({
 			TrackId: track.TrackId,
 			TrackName: track.TrackName,
-			AuthorTime: formatTime(track.AuthorTime),
-			WrTime: formatTime(worldRecords[track.TrackId]?.Time) ?? 'N/A',
+			AuthorTime: track.AuthorTime,
+			WrTime: wr?.Time ?? 'N/A',
 			WrFaster: wrFaster,
 			WrNickname: wrPlayer ? wrPlayer.Nickname : 'N/A',
+			WrLogin: wrLoginOrId,
 			WrSource: wrSource,
+			Delta: wr?.Delta ?? 'N/A',
 			UploadedAt: track.UploadedAt
     	});
     };
@@ -38,7 +44,8 @@ export function buildRecordsRows(trackId, dediRecords, tmxRecords, players) {
 		rows.push({
 			source: 'Dedimania',
 			player: players["dedi"][rec.PlayerLogin] ? players["dedi"][rec.PlayerLogin].Nickname : rec.PlayerLogin,
-			time: formatTime(rec.Time),
+			playerLogin: rec.PlayerLogin,
+			time: rec.Time,
 			date: rec.RecordDate,
 			ml: players["dedi"][rec.PlayerLogin] ? players["dedi"][rec.PlayerLogin].TeamML : false
 		});
@@ -51,7 +58,8 @@ export function buildRecordsRows(trackId, dediRecords, tmxRecords, players) {
 		rows.push({
 			source: 'TMX',
 			player: players["tmx"][rec.PlayerId] ? players["tmx"][rec.PlayerId].Nickname : rec.PlayerId,
-			time: formatTime(rec.Time),
+			playerId: rec.PlayerId,
+			time: rec.Time,
 			date: rec.RecordDate,
 			ml: players["tmx"][rec.PlayerId] ? players["tmx"][rec.PlayerId].TeamML : false
 		});
@@ -101,23 +109,6 @@ function lookupPlayer(login, id, playerInfo) {
 		}
 	}
 	return null;
-}
-
-function formatTime(ms) {
-    if (ms === null) return 'N/A';
-    const seconds = (ms / 1000).toFixed(2);
-    if (seconds < 60) {
-        return `${seconds}`;
-    } else if (seconds < 3600) {
-        const mins = Math.floor(seconds / 60);
-        const secs = (seconds % 60).toFixed(2).padStart(5, '0');
-        return `${mins}:${secs}`;
-    } else {
-        const hours = Math.floor(seconds / 3600);
-        const mins = (Math.floor((seconds % 3600) / 60)).toString().padStart(2, '0');
-        const secs = (seconds % 60).toFixed(2).padStart(5, '0');
-        return `${hours}:${mins}:${secs}`;
-    }
 }
 
 function isWrFaster(wrRec, authorTime) {
