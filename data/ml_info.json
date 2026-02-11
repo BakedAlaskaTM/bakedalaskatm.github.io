@@ -227,5 +227,11 @@
         "TMX": [
             8802138
         ]
+    },
+    "hexlimit": {
+        "Login": "hexlimit",
+        "TMX": [
+            8857890
+        ]
     }
 }
