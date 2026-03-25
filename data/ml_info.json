@@ -233,5 +233,9 @@
         "TMX": [
             8857890
         ]
+    },
+    "nxt_nino": {
+        "Login": "nxt_nino",
+        "TMX": []
     }
 }
