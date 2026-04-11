@@ -1,0 +1,142 @@
+export function buildTracksTableData(tracksJson, worldRecords, players) {
+    let rows = [];
+    for (const track of Object.values(tracksJson || {})) {
+        const wrFaster = isWrFaster(worldRecords[track.TrackId], track.AuthorTime);
+        const wr = worldRecords[track.TrackId] ?? null;
+        let wrPlayer = null;
+        let wrSource = 'N/A';
+        
+        if (wr !== null) {
+            if (wr.Source === 'dedi') {
+                const wrLogin = wr.PlayerLogin ?? null;
+                wrPlayer = players["dedi"]?.[wrLogin] ?? null;
+                wrSource = 'Dedimania';
+            } else if (wr.Source === 'tmx') {
+                const wrId = wr.PlayerId ?? null;
+                wrPlayer = players["tmx"]?.[wrId] ?? null;
+                wrSource = 'TMX';
+            }
+        }
+        
+        let wrLoginOrId = wrPlayer ? wrPlayer.Id : 'N/A';
+        if (wrSource === "Dedimania") {
+            wrLoginOrId = wrPlayer ? wrPlayer.Login : 'N/A';
+        }
+        
+        rows.push({
+            TrackId: track.TrackId,
+            TrackName: track.TrackName,
+            AuthorTime: track.AuthorTime,
+            WrTime: wr?.Time ?? null,
+            WrFaster: wrFaster,
+            WrNickname: wrPlayer ? wrPlayer.Nickname : 'N/A',
+            WrLogin: wrLoginOrId,
+            WrSource: wrSource,
+            Delta: wr?.Delta ?? null,
+            UploadedAt: track.UploadedAt
+        });
+    }
+    return rows;
+}
+
+export function buildRecordsRows(trackId, dediRecords, tmxRecords, players) {
+    const rows = [];
+    if (dediRecords[trackId]) {
+        for (const rec of dediRecords[trackId]) {
+            rows.push({
+                source: 'Dedimania',
+                player: players["dedi"]?.[rec.PlayerLogin] ? players["dedi"][rec.PlayerLogin].Nickname : rec.PlayerLogin,
+                playerLogin: rec.PlayerLogin,
+                time: rec.Time,
+                date: rec.RecordDate,
+                ml: players["dedi"]?.[rec.PlayerLogin] ? players["dedi"][rec.PlayerLogin].TeamML : false
+            });
+        }
+    }
+    if (tmxRecords[trackId]) {
+        for (const rec of tmxRecords[trackId]) {
+            rows.push({
+                source: 'TMX',
+                player: players["tmx"]?.[rec.PlayerId] ? players["tmx"][rec.PlayerId].Nickname : rec.PlayerId,
+                playerId: rec.PlayerId,
+                time: rec.Time,
+                date: rec.RecordDate,
+                ml: players["tmx"]?.[rec.PlayerId] ? players["tmx"][rec.PlayerId].TeamML : false
+            });
+        }
+    }
+    return rows.sort((a, b) => {
+        if (a.time !== b.time) return a.time - b.time;
+        return a.date.localeCompare(b.date);
+    });
+}
+
+export function buildWrStats(worldRecords, mlInfo, players) {
+    let wrCount = {};
+    for (const login of Object.keys(mlInfo || {})) {
+        wrCount[login] = 0;
+    }
+    
+    for (const wr of Object.values(worldRecords || {})) {
+        if (wr === null) continue;
+        let wrPlayer = null;
+        if (wr.Source === "dedi") {
+            wrPlayer = lookupPlayer(wr.PlayerLogin, null, mlInfo);
+        } else if (wr.Source === "tmx") {
+            wrPlayer = lookupPlayer(null, wr.PlayerId, mlInfo);
+        }
+        if (wrPlayer !== null && wrCount[wrPlayer.Login] !== undefined) {
+            wrCount[wrPlayer.Login]++;
+        }
+    }
+
+    const rows = [];
+    for (const [login, count] of Object.entries(wrCount)) {
+        rows.push({
+            login: login,
+            nickname: players["dedi"]?.[login] ? players["dedi"][login].Nickname : login,
+            count: count
+        });
+    }
+    return rows.sort((a, b) => b.count - a.count);
+}
+
+function lookupPlayer(login, id, playerInfo) {
+    if (!playerInfo) return null;
+    for (const player of Object.values(playerInfo)) {
+        if (login === player.Login) return player;
+        if (id === player.TMX) return player;
+    }
+    return null;
+}
+
+function isWrFaster(wrRec, authorTime) {
+    const wrTime = wrRec?.Time;
+    if (wrTime === undefined || wrTime === null) return false;
+    return wrTime < authorTime;
+}
+
+export function formatTime(ms, hideSignForPositive = false) {
+    if (ms === null || ms === undefined || ms === 'N/A') return 'N/A';
+    const isNegative = ms < 0;
+    const isPositive = ms > 0;
+    ms = Math.abs(ms);
+    const seconds = Number((ms / 1000).toFixed(2));
+    
+    let result = '';
+    if (seconds < 60) {
+        result = `${seconds.toFixed(2)}`;
+    } else if (seconds < 3600) {
+        const mins = Math.floor(seconds / 60);
+        const secs = (seconds % 60).toFixed(2).padStart(5, '0');
+        result = `${mins}:${secs}`;
+    } else {
+        const hours = Math.floor(seconds / 3600);
+        const mins = (Math.floor((seconds % 3600) / 60)).toString().padStart(2, '0');
+        const secs = (seconds % 60).toFixed(2).padStart(5, '0');
+        result = `${hours}:${mins}:${secs}`;
+    }
+    if (isNegative) return `-${result}`;
+    if (isPositive && !hideSignForPositive) return `+${result}`;
+    return result;
+}
