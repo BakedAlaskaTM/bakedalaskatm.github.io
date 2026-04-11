@@ -3,6 +3,7 @@ import Header from './components/Header';
 import LeaderboardTable from './components/LeaderboardTable';
 import { fetchAllData } from './utils/store';
 import { buildTracksTableData, buildWrStats, buildRecordsRows, formatTime } from './utils/transform';
+import { ExternalLink } from 'lucide-react';
 
 // Tooltip Component for hover info
 const Tooltip = ({ children, text }) => (
@@ -62,18 +63,18 @@ export default function App() {
             <div className="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-600/10 blur-[120px] pointer-events-none"></div>
             <div className="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-600/10 blur-[120px] pointer-events-none"></div>
 
-            <Header 
-                activeTab={activeTab === 'map' ? null : activeTab} 
+            <Header
+                activeTab={activeTab === 'map' ? null : activeTab}
                 setActiveTab={(tab) => {
                     setActiveTab(tab);
                     setActiveTrackId(null);
-                }} 
-                progress={progress} 
+                }}
+                progress={progress}
             />
 
             <main className="w-11/12 max-w-6xl mx-auto relative z-10 transition-all">
                 {activeTab === 'map' && (
-                    <button 
+                    <button
                         onClick={() => setActiveTab('home')}
                         className="mb-6 px-4 py-2 font-semibold text-sm rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition-colors border border-slate-700/50 flex items-center gap-2 shadow-lg"
                     >
@@ -119,7 +120,7 @@ function TracksView({ storeData, onTrackClick }) {
             header: 'Name',
             accessorKey: 'TrackName',
             cell: ({ row, getValue }) => (
-                <button 
+                <button
                     className="font-semibold text-slate-200 hover:text-blue-400 hover:underline transition-colors text-left w-full truncate"
                     onClick={() => onTrackClick(row.original.TrackId)}
                 >
@@ -177,13 +178,14 @@ function TracksView({ storeData, onTrackClick }) {
             header: 'TMX',
             accessorKey: 'TrackId',
             cell: ({ getValue }) => (
-                <a 
-                    href={`https://tmnf.exchange/trackshow/${getValue()}`} 
-                    target="_blank" 
+                <a
+                    href={`https://tmnf.exchange/trackshow/${getValue()}`}
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 underline underline-offset-2 decoration-blue-500/30 hover:decoration-blue-400 font-medium transition-colors"
+                    className="text-blue-400 hover:text-blue-300 font-medium transition-colors flex items-center gap-1 group/link"
                 >
-                    Link ↗
+                    <span className="underline underline-offset-2 decoration-blue-500/30 group-hover/link:decoration-blue-400">Link</span>
+                    <ExternalLink size={14} className="opacity-80 group-hover/link:opacity-100" />
                 </a>
             )
         }
