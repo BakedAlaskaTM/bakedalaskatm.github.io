@@ -183,7 +183,7 @@ function TracksView({ storeData, onTrackClick }) {
                     rel="noopener noreferrer"
                     className="text-blue-400 hover:text-blue-300 underline underline-offset-2 decoration-blue-500/30 hover:decoration-blue-400 font-medium transition-colors"
                 >
-                    Link &nearr;
+                    Link ↗
                 </a>
             )
         }
