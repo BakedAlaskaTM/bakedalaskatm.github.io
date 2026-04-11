@@ -4,8 +4,8 @@ export function buildTracksTableData(tracksJson, worldRecords, players) {
         const wrFaster = isWrFaster(worldRecords[track.TrackId], track.AuthorTime);
         const wr = worldRecords[track.TrackId] ?? null;
         let wrPlayer = null;
-        let wrSource = 'N/A';
-        
+        let wrSource = '-';
+
         if (wr !== null) {
             if (wr.Source === 'dedi') {
                 const wrLogin = wr.PlayerLogin ?? null;
@@ -17,19 +17,19 @@ export function buildTracksTableData(tracksJson, worldRecords, players) {
                 wrSource = 'TMX';
             }
         }
-        
-        let wrLoginOrId = wrPlayer ? wrPlayer.Id : 'N/A';
+
+        let wrLoginOrId = wrPlayer ? wrPlayer.Id : '-';
         if (wrSource === "Dedimania") {
-            wrLoginOrId = wrPlayer ? wrPlayer.Login : 'N/A';
+            wrLoginOrId = wrPlayer ? wrPlayer.Login : '-';
         }
-        
+
         rows.push({
             TrackId: track.TrackId,
             TrackName: track.TrackName,
             AuthorTime: track.AuthorTime,
             WrTime: wr?.Time ?? null,
             WrFaster: wrFaster,
-            WrNickname: wrPlayer ? wrPlayer.Nickname : 'N/A',
+            WrNickname: wrPlayer ? wrPlayer.Nickname : '-',
             WrLogin: wrLoginOrId,
             WrSource: wrSource,
             Delta: wr?.Delta ?? null,
@@ -76,7 +76,7 @@ export function buildWrStats(worldRecords, mlInfo, players) {
     for (const login of Object.keys(mlInfo || {})) {
         wrCount[login] = 0;
     }
-    
+
     for (const wr of Object.values(worldRecords || {})) {
         if (wr === null) continue;
         let wrPlayer = null;
@@ -117,12 +117,12 @@ function isWrFaster(wrRec, authorTime) {
 }
 
 export function formatTime(ms, hideSignForPositive = false) {
-    if (ms === null || ms === undefined || ms === 'N/A') return 'N/A';
+    if (ms === null || ms === undefined || ms === 'N/A' || ms === '-') return '-';
     const isNegative = ms < 0;
     const isPositive = ms > 0;
     ms = Math.abs(ms);
     const seconds = Number((ms / 1000).toFixed(2));
-    
+
     let result = '';
     if (seconds < 60) {
         result = `${seconds.toFixed(2)}`;

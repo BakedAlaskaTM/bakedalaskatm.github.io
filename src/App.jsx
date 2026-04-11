@@ -75,7 +75,7 @@ export default function App() {
             <main className="w-11/12 max-w-6xl mx-auto relative z-10 transition-all">
                 {activeTab === 'map' && (
                     <button
-                        onClick={() => setActiveTab('home')}
+                        onClick={() => setActiveTab('stats')}
                         className="mb-6 px-4 py-2 font-semibold text-sm rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition-colors border border-slate-700/50 flex items-center gap-2 shadow-lg"
                     >
                         &larr; Back to tracks
@@ -83,8 +83,8 @@ export default function App() {
                 )}
 
                 <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                    {activeTab === 'home' && <TracksView storeData={storeData} onTrackClick={handleTrackClick} />}
-                    {activeTab === 'stats' && <StatsView storeData={storeData} />}
+                    {activeTab === 'home' && <StatsView storeData={storeData} />}
+                    {activeTab === 'stats' && <TracksView storeData={storeData} onTrackClick={handleTrackClick} />}
                     {activeTab === 'map' && <RecordsView trackId={activeTrackId} storeData={storeData} />}
                 </div>
             </main>
@@ -133,7 +133,8 @@ function TracksView({ storeData, onTrackClick }) {
             accessorKey: 'WrTime',
             meta: { className: 'text-right' },
             cell: ({ row, getValue }) => {
-                const timeStr = formatTime(getValue());
+                const timeStr = formatTime(getValue(), true);
+                if (timeStr === '-') return <span className="text-slate-500 tabular-nums">-</span>;
                 if (row.original.WrFaster) {
                     return <span className="font-bold tabular-nums bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent drop-shadow-sm">{timeStr}</span>;
                 }
@@ -145,14 +146,18 @@ function TracksView({ storeData, onTrackClick }) {
             accessorKey: 'WrNickname',
             cell: ({ row, getValue }) => {
                 const nick = getValue();
-                if (nick === 'N/A') return nick;
+                if (nick === '-') return <span className="text-slate-500">-</span>;
                 return <Tooltip text={row.original.WrLogin}>{nick}</Tooltip>;
             }
         },
         {
             header: 'WR Source',
             accessorKey: 'WrSource',
-            cell: ({ getValue }) => <span className="text-slate-400">{getValue()}</span>
+            cell: ({ getValue }) => {
+                const val = getValue();
+                if (val === '-') return <span className="text-slate-500">-</span>;
+                return <span className="text-slate-400">{val}</span>;
+            }
         },
         {
             header: 'Delta',
@@ -171,7 +176,7 @@ function TracksView({ storeData, onTrackClick }) {
             accessorKey: 'AuthorTime',
             meta: { className: 'text-right' },
             cell: ({ getValue }) => (
-                <span className="font-semibold text-emerald-400 tabular-nums">{formatTime(getValue())}</span>
+                <span className="font-semibold text-emerald-400 tabular-nums">{formatTime(getValue(), true)}</span>
             )
         },
         {
