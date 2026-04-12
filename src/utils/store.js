@@ -5,12 +5,13 @@ export async function fetchAllData() {
         return res.json();
     };
 
-    const [tracks, players, dediRecords, tmxRecords, mlInfo] = await Promise.all([
+    const [tracks, players, dediRecords, tmxRecords, mlInfo, summaryStats] = await Promise.all([
         fetchJson('/data/tracks.json'),
         fetchJson('/data/players.json'),
         fetchJson('/data/dedi_records.json'),
         fetchJson('/data/tmx_records.json'),
-        fetchJson('/data/ml_info.json')
+        fetchJson('/data/ml_info.json'),
+        fetchJson('/data/summary_stats.json')
     ]);
 
     const worldRecords = computeWorldRecords(dediRecords, tmxRecords, players);
@@ -21,7 +22,8 @@ export async function fetchAllData() {
         dediRecords,
         tmxRecords,
         mlInfo,
-        worldRecords
+        worldRecords,
+        summaryStats
     };
 }
 

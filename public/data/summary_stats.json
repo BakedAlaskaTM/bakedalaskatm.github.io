@@ -1,0 +1,1693 @@
+{
+    "2026-01-23": {
+        "WrsGained": {},
+        "WrsLost": {},
+        "Total": 708,
+        "MLStats": {
+            "fillipp_": 26,
+            "baked_alaska": 92,
+            "specul4rr": 12,
+            "exix77": 109,
+            "dzamal1s": 90,
+            "lemon_playz": 19,
+            "humblytoxic": 10,
+            "violynos": 7,
+            "_lucida": 38,
+            "ayeewake": 50,
+            "rumbleiq": 28,
+            "king_ate": 7,
+            "w1ndspe3dyy": 36,
+            "pseudodragon": 9,
+            "julianstephens96": 3,
+            "wildmagnusdk": 34,
+            "nems_hat_": 15,
+            "randomvidzz321": 20,
+            "dadvik": 18,
+            "samurai_master123": 14,
+            "pieplay08": 3,
+            "thenlo_tm": 11,
+            "rahzool": 8,
+            "corey_123344": 12,
+            "jfnoahtm": 4,
+            "apextmnf": 5,
+            "rogamer": 2,
+            "locklurz": 5,
+            "t3v5": 1,
+            "noehehe": 7,
+            "thesuperbacon53": 2,
+            "lzaps": 5,
+            "crims0nwr4th": 3,
+            "usaontop2": 2,
+            "404not_found": 1
+        },
+        "Changes": [
+            0,
+            0
+        ]
+    },
+    "2026-01-26": {
+        "WrsGained": {
+            "10037696": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "8797722",
+                    "Time": 7700,
+                    "RecordDate": "2022-12-24 00:23:36"
+                },
+                "New": {
+                    "PlayerLogin": "dzamal1s",
+                    "PlayerId": null,
+                    "Time": 7570,
+                    "RecordDate": "2026-01-22 04:16:39"
+                },
+                "Delta": -130,
+                "Age": 1125
+            },
+            "10149753": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9908271",
+                    "Time": 8780,
+                    "RecordDate": "2023-02-07 18:12:27"
+                },
+                "New": {
+                    "PlayerLogin": "thenlo_tm",
+                    "PlayerId": null,
+                    "Time": 8630,
+                    "RecordDate": "2026-01-21 00:53:33"
+                },
+                "Delta": -150,
+                "Age": 1078
+            },
+            "10201086": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9908271",
+                    "Time": 7190,
+                    "RecordDate": "2023-02-17 21:06:13"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 7170,
+                    "RecordDate": "2026-01-21 21:52:16"
+                },
+                "Delta": -20,
+                "Age": 1069
+            }
+        },
+        "WrsLost": {
+            "13082082": {
+                "Old": {
+                    "PlayerLogin": "exix77",
+                    "PlayerId": null,
+                    "Time": 20640,
+                    "RecordDate": "2026-01-16 05:54:38"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10900749",
+                    "Time": 20580,
+                    "RecordDate": "2026-01-21 14:27:58"
+                },
+                "Delta": -60,
+                "Age": 5
+            }
+        },
+        "Total": 710,
+        "MLStats": {
+            "fillipp_": 26,
+            "baked_alaska": 92,
+            "specul4rr": 12,
+            "exix77": 107,
+            "dzamal1s": 90,
+            "lemon_playz": 19,
+            "humblytoxic": 10,
+            "violynos": 7,
+            "_lucida": 40,
+            "ayeewake": 50,
+            "rumbleiq": 28,
+            "king_ate": 7,
+            "samurai_master123": 15,
+            "w1ndspe3dyy": 36,
+            "pseudodragon": 9,
+            "julianstephens96": 3,
+            "wildmagnusdk": 34,
+            "nems_hat_": 15,
+            "randomvidzz321": 20,
+            "dadvik": 18,
+            "pieplay08": 3,
+            "thenlo_tm": 12,
+            "rahzool": 8,
+            "corey_123344": 12,
+            "jfnoahtm": 4,
+            "apextmnf": 5,
+            "rogamer": 2,
+            "locklurz": 5,
+            "t3v5": 1,
+            "noehehe": 7,
+            "thesuperbacon53": 2,
+            "lzaps": 5,
+            "crims0nwr4th": 3,
+            "usaontop2": 2,
+            "404not_found": 1
+        },
+        "Changes": [
+            3,
+            -1
+        ]
+    },
+    "2026-01-28": {
+        "WrsGained": {
+            "11834444": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10455936",
+                    "Time": 22640,
+                    "RecordDate": "2025-04-11 10:46:33"
+                },
+                "New": {
+                    "PlayerLogin": "_lucida",
+                    "PlayerId": null,
+                    "Time": 22580,
+                    "RecordDate": "2026-01-26 21:59:58"
+                },
+                "Delta": -60,
+                "Age": 290
+            },
+            "12722394": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "11637590",
+                    "Time": 12320,
+                    "RecordDate": "2025-07-24 19:01:01"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 11510,
+                    "RecordDate": "2026-01-24 22:26:51"
+                },
+                "Delta": -810,
+                "Age": 184
+            }
+        },
+        "WrsLost": {},
+        "Total": 712,
+        "MLStats": {
+            "fillipp_": 26,
+            "baked_alaska": 91,
+            "specul4rr": 12,
+            "exix77": 109,
+            "dzamal1s": 90,
+            "lemon_playz": 19,
+            "humblytoxic": 10,
+            "violynos": 7,
+            "_lucida": 42,
+            "ayeewake": 50,
+            "rumbleiq": 28,
+            "king_ate": 7,
+            "samurai_master123": 15,
+            "w1ndspe3dyy": 36,
+            "pseudodragon": 9,
+            "julianstephens96": 3,
+            "wildmagnusdk": 34,
+            "nems_hat_": 15,
+            "randomvidzz321": 20,
+            "dadvik": 18,
+            "pieplay08": 3,
+            "thenlo_tm": 12,
+            "rahzool": 8,
+            "corey_123344": 12,
+            "jfnoahtm": 4,
+            "rogamer": 2,
+            "locklurz": 5,
+            "t3v5": 1,
+            "noehehe": 7,
+            "thesuperbacon53": 2,
+            "lzaps": 5,
+            "crims0nwr4th": 3,
+            "apextmnf": 4,
+            "usaontop2": 2,
+            "404not_found": 1
+        },
+        "Changes": [
+            2,
+            0
+        ]
+    },
+    "2026-01-30": {
+        "WrsGained": {
+            "10965940": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9657332",
+                    "Time": 7260,
+                    "RecordDate": "2023-11-25 12:48:43"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 7140,
+                    "RecordDate": "2026-01-26 15:13:54"
+                },
+                "Delta": -120,
+                "Age": 793
+            },
+            "12608945": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "7192399",
+                    "Time": 13100,
+                    "RecordDate": "2025-05-18 16:50:14"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 12930,
+                    "RecordDate": "2026-01-27 22:14:06"
+                },
+                "Delta": -170,
+                "Age": 254
+            },
+            "13082069": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10900749",
+                    "Time": 21170,
+                    "RecordDate": "2026-01-25 11:56:21"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 21150,
+                    "RecordDate": "2026-01-26 16:52:38"
+                },
+                "Delta": -20,
+                "Age": 1
+            },
+            "12640401": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10638965",
+                    "Time": 15870,
+                    "RecordDate": "2025-06-01 15:52:02"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 15120,
+                    "RecordDate": "2026-01-26 15:10:28"
+                },
+                "Delta": -750,
+                "Age": 238
+            }
+        },
+        "WrsLost": {},
+        "Total": 716,
+        "MLStats": {
+            "fillipp_": 26,
+            "baked_alaska": 91,
+            "specul4rr": 12,
+            "exix77": 109,
+            "dzamal1s": 90,
+            "lemon_playz": 19,
+            "humblytoxic": 9,
+            "violynos": 7,
+            "_lucida": 47,
+            "ayeewake": 50,
+            "rumbleiq": 28,
+            "king_ate": 7,
+            "samurai_master123": 15,
+            "w1ndspe3dyy": 36,
+            "pseudodragon": 9,
+            "julianstephens96": 3,
+            "wildmagnusdk": 34,
+            "nems_hat_": 15,
+            "randomvidzz321": 20,
+            "dadvik": 18,
+            "pieplay08": 3,
+            "thenlo_tm": 12,
+            "rahzool": 8,
+            "corey_123344": 12,
+            "jfnoahtm": 4,
+            "rogamer": 2,
+            "locklurz": 5,
+            "t3v5": 1,
+            "noehehe": 7,
+            "thesuperbacon53": 2,
+            "lzaps": 5,
+            "crims0nwr4th": 3,
+            "apextmnf": 4,
+            "usaontop2": 2,
+            "404not_found": 1
+        },
+        "Changes": [
+            4,
+            0
+        ]
+    },
+    "2026-02-11": {
+        "WrsGained": {
+            "11007283": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "3487216",
+                    "Time": 7090,
+                    "RecordDate": "2024-02-02 12:14:41"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 6990,
+                    "RecordDate": "2026-01-28 11:00:30"
+                },
+                "Delta": -100,
+                "Age": 725
+            },
+            "10760083": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "5040430",
+                    "Time": 7500,
+                    "RecordDate": "2023-08-23 11:59:22"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 7490,
+                    "RecordDate": "2026-01-28 13:24:41"
+                },
+                "Delta": -10,
+                "Age": 889
+            },
+            "12590287": {
+                "Old": {
+                    "PlayerLogin": "lelopado",
+                    "PlayerId": null,
+                    "Time": 15220,
+                    "RecordDate": "2025-06-11 15:31:25"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 14460,
+                    "RecordDate": "2026-01-28 12:32:42"
+                },
+                "Delta": -760,
+                "Age": 230
+            }
+        },
+        "WrsLost": {},
+        "Total": 719,
+        "MLStats": {
+            "fillipp_": 25,
+            "baked_alaska": 91,
+            "specul4rr": 12,
+            "exix77": 109,
+            "dzamal1s": 90,
+            "lemon_playz": 19,
+            "humblytoxic": 9,
+            "violynos": 7,
+            "_lucida": 51,
+            "ayeewake": 50,
+            "rumbleiq": 28,
+            "king_ate": 7,
+            "samurai_master123": 15,
+            "w1ndspe3dyy": 36,
+            "pseudodragon": 9,
+            "julianstephens96": 3,
+            "wildmagnusdk": 34,
+            "nems_hat_": 15,
+            "randomvidzz321": 20,
+            "dadvik": 18,
+            "pieplay08": 3,
+            "thenlo_tm": 12,
+            "rahzool": 8,
+            "corey_123344": 12,
+            "jfnoahtm": 4,
+            "rogamer": 2,
+            "locklurz": 5,
+            "t3v5": 1,
+            "noehehe": 7,
+            "thesuperbacon53": 2,
+            "lzaps": 5,
+            "crims0nwr4th": 3,
+            "apextmnf": 4,
+            "usaontop2": 2,
+            "404not_found": 1
+        },
+        "Changes": [
+            3,
+            0
+        ]
+    },
+    "2026-03-18": {
+        "WrsGained": {
+            "11057352": {
+                "Old": {
+                    "PlayerLogin": "dziwnystan",
+                    "PlayerId": null,
+                    "Time": 7840,
+                    "RecordDate": "2023-12-29 19:11:18"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 7670,
+                    "RecordDate": "2026-02-02 20:26:20"
+                },
+                "Delta": -170,
+                "Age": 766
+            },
+            "13020782": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "12425898",
+                    "Time": 8900,
+                    "RecordDate": "2025-12-17 00:41:39"
+                },
+                "New": {
+                    "PlayerLogin": "nems_hat_",
+                    "PlayerId": null,
+                    "Time": 8870,
+                    "RecordDate": "2026-02-06 12:45:04"
+                },
+                "Delta": -30,
+                "Age": 51
+            },
+            "12645904": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "12425898",
+                    "Time": 11270,
+                    "RecordDate": "2025-06-04 21:26:58"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 10540,
+                    "RecordDate": "2026-02-04 17:03:03"
+                },
+                "Delta": -730,
+                "Age": 244
+            },
+            "11181077": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "5040430",
+                    "Time": 7430,
+                    "RecordDate": "2024-02-19 22:01:51"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9484769",
+                    "Time": 7420,
+                    "RecordDate": "2026-02-05 23:14:45"
+                },
+                "Delta": -10,
+                "Age": 717
+            },
+            "10654341": {
+                "Old": {
+                    "PlayerLogin": "magiclip",
+                    "PlayerId": null,
+                    "Time": 8060,
+                    "RecordDate": "2023-07-25 20:33:24"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 8040,
+                    "RecordDate": "2026-02-01 21:52:48"
+                },
+                "Delta": -20,
+                "Age": 922
+            },
+            "12576740": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "12425898",
+                    "Time": 10320,
+                    "RecordDate": "2025-05-10 04:01:14"
+                },
+                "New": {
+                    "PlayerLogin": "exix77",
+                    "PlayerId": null,
+                    "Time": 10220,
+                    "RecordDate": "2026-02-08 11:47:11"
+                },
+                "Delta": -100,
+                "Age": 274
+            },
+            "12645006": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "12425898",
+                    "Time": 11910,
+                    "RecordDate": "2025-06-03 21:02:23"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 11670,
+                    "RecordDate": "2026-02-01 21:18:46"
+                },
+                "Delta": -240,
+                "Age": 243
+            },
+            "10530764": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "6609450",
+                    "Time": 7370,
+                    "RecordDate": "2023-06-07 04:41:19"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 7360,
+                    "RecordDate": "2026-02-01 18:56:13"
+                },
+                "Delta": -10,
+                "Age": 970
+            },
+            "12380914": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10452412",
+                    "Time": 15290,
+                    "RecordDate": "2025-03-01 10:54:54"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 15230,
+                    "RecordDate": "2026-01-31 23:53:41"
+                },
+                "Delta": -60,
+                "Age": 336
+            },
+            "10576697": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10499773",
+                    "Time": 8510,
+                    "RecordDate": "2023-06-26 07:30:22"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 8480,
+                    "RecordDate": "2026-01-31 22:12:50"
+                },
+                "Delta": -30,
+                "Age": 950
+            },
+            "12629852": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9513776",
+                    "Time": 19140,
+                    "RecordDate": "2025-05-29 16:32:53"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 15720,
+                    "RecordDate": "2026-02-02 21:24:37"
+                },
+                "Delta": -3420,
+                "Age": 249
+            },
+            "10798867": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "2234690",
+                    "Time": 7290,
+                    "RecordDate": "2023-09-06 19:22:11"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 7280,
+                    "RecordDate": "2026-01-31 22:36:55"
+                },
+                "Delta": -10,
+                "Age": 878
+            },
+            "12639881": {
+                "Old": {
+                    "PlayerLogin": "87pts",
+                    "PlayerId": null,
+                    "Time": 11110,
+                    "RecordDate": "2025-05-31 19:35:58"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 11040,
+                    "RecordDate": "2026-01-31 22:17:41"
+                },
+                "Delta": -70,
+                "Age": 245
+            },
+            "12701036": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "12425898",
+                    "Time": 12070,
+                    "RecordDate": "2025-07-03 23:38:30"
+                },
+                "New": {
+                    "PlayerLogin": "exix77",
+                    "PlayerId": null,
+                    "Time": 11390,
+                    "RecordDate": "2026-02-05 06:33:37"
+                },
+                "Delta": -680,
+                "Age": 216
+            },
+            "12437311": {
+                "Old": {
+                    "PlayerLogin": "anrede",
+                    "PlayerId": null,
+                    "Time": 10680,
+                    "RecordDate": "2025-10-16 09:38:31"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 10620,
+                    "RecordDate": "2026-02-02 20:36:48"
+                },
+                "Delta": -60,
+                "Age": 109
+            },
+            "11037369": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10758555",
+                    "Time": 5240,
+                    "RecordDate": "2023-12-13 23:05:48"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "8955776",
+                    "Time": 5060,
+                    "RecordDate": "2026-01-31 10:58:20"
+                },
+                "Delta": -180,
+                "Age": 779
+            }
+        },
+        "WrsLost": {
+            "10027439": {
+                "Old": {
+                    "PlayerLogin": "pseudodragon",
+                    "PlayerId": null,
+                    "Time": 9480,
+                    "RecordDate": "2025-06-17 01:35:24"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "2234690",
+                    "Time": 9130,
+                    "RecordDate": "2026-02-01 20:03:33"
+                },
+                "Delta": -350,
+                "Age": 229
+            },
+            "10260872": {
+                "Old": {
+                    "PlayerLogin": "dzamal1s",
+                    "PlayerId": null,
+                    "Time": 12560,
+                    "RecordDate": "2025-02-10 15:14:31"
+                },
+                "New": {
+                    "PlayerLogin": "kristiano55",
+                    "PlayerId": null,
+                    "Time": 12540,
+                    "RecordDate": "2026-02-08 10:29:29"
+                },
+                "Delta": -20,
+                "Age": 362
+            }
+        },
+        "Total": 733,
+        "MLStats": {
+            "fillipp_": 24,
+            "baked_alaska": 89,
+            "specul4rr": 12,
+            "exix77": 110,
+            "dzamal1s": 88,
+            "lemon_playz": 19,
+            "humblytoxic": 9,
+            "violynos": 7,
+            "_lucida": 62,
+            "ayeewake": 50,
+            "rumbleiq": 28,
+            "king_ate": 7,
+            "samurai_master123": 15,
+            "w1ndspe3dyy": 36,
+            "pseudodragon": 8,
+            "julianstephens96": 3,
+            "wildmagnusdk": 34,
+            "nems_hat_": 20,
+            "randomvidzz321": 20,
+            "dadvik": 18,
+            "pieplay08": 3,
+            "thenlo_tm": 15,
+            "rahzool": 8,
+            "corey_123344": 12,
+            "jfnoahtm": 4,
+            "rogamer": 2,
+            "locklurz": 5,
+            "t3v5": 1,
+            "noehehe": 7,
+            "thesuperbacon53": 2,
+            "lzaps": 5,
+            "crims0nwr4th": 3,
+            "apextmnf": 4,
+            "usaontop2": 2,
+            "404not_found": 1
+        },
+        "Changes": [
+            16,
+            -2
+        ]
+    },
+    "2026-03-22": {
+        "WrsGained": {
+            "12900635": {
+                "Old": {
+                    "PlayerLogin": "serlo-",
+                    "PlayerId": null,
+                    "Time": 12790,
+                    "RecordDate": "2025-10-12 02:49:10"
+                },
+                "New": {
+                    "PlayerLogin": "exix77",
+                    "PlayerId": null,
+                    "Time": 12680,
+                    "RecordDate": "2026-02-13 10:28:50"
+                },
+                "Delta": -110,
+                "Age": 124
+            },
+            "10095818": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9908271",
+                    "Time": 12360,
+                    "RecordDate": "2023-01-24 16:43:16"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9171088",
+                    "Time": 11020,
+                    "RecordDate": "2026-03-04 18:36:35"
+                },
+                "Delta": -1340,
+                "Age": 1135
+            },
+            "10666876": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "6645497",
+                    "Time": 17110,
+                    "RecordDate": "2025-08-17 20:13:20"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9171088",
+                    "Time": 14590,
+                    "RecordDate": "2026-03-04 18:44:36"
+                },
+                "Delta": -2520,
+                "Age": 198
+            },
+            "10789450": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "5040430",
+                    "Time": 7800,
+                    "RecordDate": "2023-09-01 18:05:03"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9171088",
+                    "Time": 7720,
+                    "RecordDate": "2026-03-04 18:42:21"
+                },
+                "Delta": -80,
+                "Age": 915
+            },
+            "9378717": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "12165263",
+                    "Time": 7790,
+                    "RecordDate": "2025-06-11 08:45:22"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 7740,
+                    "RecordDate": "2026-02-27 16:46:05"
+                },
+                "Delta": -50,
+                "Age": 261
+            },
+            "12683973": {
+                "Old": {
+                    "PlayerLogin": "lazeramplified",
+                    "PlayerId": null,
+                    "Time": 16880,
+                    "RecordDate": "2025-12-30 09:52:49"
+                },
+                "New": {
+                    "PlayerLogin": "nxt_nino",
+                    "PlayerId": null,
+                    "Time": 16280,
+                    "RecordDate": "2026-03-13 08:55:35"
+                },
+                "Delta": -600,
+                "Age": 72
+            },
+            "10101069": {
+                "Old": {
+                    "PlayerLogin": "mc_maddin",
+                    "PlayerId": null,
+                    "Time": 8850,
+                    "RecordDate": "2023-01-29 09:23:38"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 8820,
+                    "RecordDate": "2026-02-26 22:55:08"
+                },
+                "Delta": -30,
+                "Age": 1124
+            },
+            "10900498": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9928963",
+                    "Time": 14090,
+                    "RecordDate": "2023-11-04 22:02:37"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9171088",
+                    "Time": 13280,
+                    "RecordDate": "2026-03-04 18:38:38"
+                },
+                "Delta": -810,
+                "Age": 850
+            },
+            "12771160": {
+                "Old": {
+                    "PlayerLogin": "maelyne1631",
+                    "PlayerId": null,
+                    "Time": 9850,
+                    "RecordDate": "2025-12-12 03:52:51"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 9840,
+                    "RecordDate": "2026-02-26 22:38:22"
+                },
+                "Delta": -10,
+                "Age": 76
+            },
+            "12757241": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9657332",
+                    "Time": 9580,
+                    "RecordDate": "2025-08-04 18:47:13"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9426253",
+                    "Time": 9560,
+                    "RecordDate": "2026-03-15 09:23:46"
+                },
+                "Delta": -20,
+                "Age": 222
+            },
+            "10024376": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9589593",
+                    "Time": 9730,
+                    "RecordDate": "2024-06-26 20:21:01"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9484769",
+                    "Time": 6960,
+                    "RecordDate": "2026-02-23 04:13:18"
+                },
+                "Delta": -2770,
+                "Age": 606
+            },
+            "10455329": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "6301785",
+                    "Time": 6570,
+                    "RecordDate": "2023-12-08 16:00:17"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10339573",
+                    "Time": 6540,
+                    "RecordDate": "2026-02-22 10:47:20"
+                },
+                "Delta": -30,
+                "Age": 806
+            },
+            "12649081": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "8645926",
+                    "Time": 14110,
+                    "RecordDate": "2025-06-07 19:48:03"
+                },
+                "New": {
+                    "PlayerLogin": "_lucida",
+                    "PlayerId": null,
+                    "Time": 14070,
+                    "RecordDate": "2026-02-13 09:10:52"
+                },
+                "Delta": -40,
+                "Age": 250
+            },
+            "11456820": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9908271",
+                    "Time": 117510,
+                    "RecordDate": "2024-06-23 14:40:58"
+                },
+                "New": {
+                    "PlayerLogin": "exix77",
+                    "PlayerId": null,
+                    "Time": 106780,
+                    "RecordDate": "2026-03-14 11:36:00"
+                },
+                "Delta": -10730,
+                "Age": 628
+            },
+            "11070786": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "2234690",
+                    "Time": 12430,
+                    "RecordDate": "2025-03-19 20:31:04"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 11760,
+                    "RecordDate": "2026-02-16 21:21:29"
+                },
+                "Delta": -670,
+                "Age": 334
+            },
+            "10168979": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10173806",
+                    "Time": 14460,
+                    "RecordDate": "2023-02-12 09:36:01"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9171088",
+                    "Time": 13450,
+                    "RecordDate": "2026-03-04 18:41:47"
+                },
+                "Delta": -1010,
+                "Age": 1116
+            },
+            "10511758": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "5040430",
+                    "Time": 5920,
+                    "RecordDate": "2023-05-26 17:25:24"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 5910,
+                    "RecordDate": "2026-02-27 19:09:42"
+                },
+                "Delta": -10,
+                "Age": 1008
+            },
+            "10654352": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "2234690",
+                    "Time": 7090,
+                    "RecordDate": "2023-08-01 08:57:34"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 7080,
+                    "RecordDate": "2026-02-14 12:34:20"
+                },
+                "Delta": -10,
+                "Age": 928
+            },
+            "12725716": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "11637590",
+                    "Time": 30690,
+                    "RecordDate": "2025-07-24 19:01:33"
+                },
+                "New": {
+                    "PlayerLogin": "_lucida",
+                    "PlayerId": null,
+                    "Time": 29060,
+                    "RecordDate": "2026-02-16 23:59:59"
+                },
+                "Delta": -1630,
+                "Age": 207
+            },
+            "11179875": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9394627",
+                    "Time": 8800,
+                    "RecordDate": "2024-05-13 15:45:32"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9171088",
+                    "Time": 8510,
+                    "RecordDate": "2026-03-04 18:41:27"
+                },
+                "Delta": -290,
+                "Age": 660
+            },
+            "10465506": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "2234690",
+                    "Time": 2740,
+                    "RecordDate": "2023-05-08 10:07:21"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 2730,
+                    "RecordDate": "2026-02-17 19:33:59"
+                },
+                "Delta": -10,
+                "Age": 1016
+            },
+            "12642206": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "12425898",
+                    "Time": 7570,
+                    "RecordDate": "2025-06-02 23:07:14"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 6990,
+                    "RecordDate": "2026-02-12 19:55:20"
+                },
+                "Delta": -580,
+                "Age": 254
+            },
+            "10555602": {
+                "Old": {
+                    "PlayerLogin": "magiclip",
+                    "PlayerId": null,
+                    "Time": 16720,
+                    "RecordDate": "2023-06-15 13:50:23"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 16270,
+                    "RecordDate": "2026-02-27 09:12:20"
+                },
+                "Delta": -450,
+                "Age": 987
+            }
+        },
+        "WrsLost": {
+            "10198446": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9530566",
+                    "Time": 3670,
+                    "RecordDate": "2026-01-15 07:11:05"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "2234690",
+                    "Time": 3480,
+                    "RecordDate": "2026-02-23 10:59:35"
+                },
+                "Delta": -190,
+                "Age": 39
+            },
+            "10972398": {
+                "Old": {
+                    "PlayerLogin": "w1ndspe3dyy",
+                    "PlayerId": null,
+                    "Time": 16520,
+                    "RecordDate": "2025-02-02 14:28:38"
+                },
+                "New": {
+                    "PlayerLogin": "maelyne1631",
+                    "PlayerId": null,
+                    "Time": 16480,
+                    "RecordDate": "2026-03-14 01:41:48"
+                },
+                "Delta": -40,
+                "Age": 404
+            },
+            "10798845": {
+                "Old": {
+                    "PlayerLogin": "ayeewake",
+                    "PlayerId": null,
+                    "Time": 20210,
+                    "RecordDate": "2025-02-02 05:42:27"
+                },
+                "New": {
+                    "PlayerLogin": "rxa4",
+                    "PlayerId": null,
+                    "Time": 20160,
+                    "RecordDate": "2026-03-07 01:55:43"
+                },
+                "Delta": -50,
+                "Age": 397
+            },
+            "10075327": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9473142",
+                    "Time": 10170,
+                    "RecordDate": "2026-01-14 15:16:15"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9267120",
+                    "Time": 7880,
+                    "RecordDate": "2026-02-18 04:10:28"
+                },
+                "Delta": -2290,
+                "Age": 34
+            },
+            "10465014": {
+                "Old": {
+                    "PlayerLogin": "wildmagnusdk",
+                    "PlayerId": null,
+                    "Time": 15120,
+                    "RecordDate": "2025-02-15 22:32:37"
+                },
+                "New": {
+                    "PlayerLogin": "julius137_",
+                    "PlayerId": null,
+                    "Time": 15110,
+                    "RecordDate": "2026-03-03 11:29:52"
+                },
+                "Delta": -10,
+                "Age": 380
+            },
+            "11410737": {
+                "Old": {
+                    "PlayerLogin": "randomvidzz321",
+                    "PlayerId": null,
+                    "Time": 195570,
+                    "RecordDate": "2025-04-15 19:23:43"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "7192136",
+                    "Time": 173920,
+                    "RecordDate": "2026-03-04 21:25:05"
+                },
+                "Delta": -21650,
+                "Age": 323
+            },
+            "10425836": {
+                "Old": {
+                    "PlayerLogin": "rumbleiq",
+                    "PlayerId": null,
+                    "Time": 12330,
+                    "RecordDate": "2025-02-20 14:42:57"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9267120",
+                    "Time": 12200,
+                    "RecordDate": "2026-03-13 05:46:22"
+                },
+                "Delta": -130,
+                "Age": 385
+            }
+        },
+        "Total": 749,
+        "MLStats": {
+            "fillipp_": 23,
+            "baked_alaska": 87,
+            "specul4rr": 12,
+            "exix77": 115,
+            "dzamal1s": 89,
+            "lemon_playz": 19,
+            "humblytoxic": 9,
+            "violynos": 7,
+            "_lucida": 74,
+            "ayeewake": 48,
+            "rumbleiq": 27,
+            "king_ate": 7,
+            "samurai_master123": 15,
+            "w1ndspe3dyy": 35,
+            "pseudodragon": 7,
+            "julianstephens96": 3,
+            "wildmagnusdk": 33,
+            "nems_hat_": 21,
+            "randomvidzz321": 25,
+            "dadvik": 20,
+            "pieplay08": 3,
+            "rahzool": 8,
+            "corey_123344": 11,
+            "jfnoahtm": 4,
+            "rogamer": 2,
+            "thenlo_tm": 14,
+            "locklurz": 5,
+            "t3v5": 1,
+            "noehehe": 7,
+            "thesuperbacon53": 2,
+            "lzaps": 5,
+            "crims0nwr4th": 3,
+            "apextmnf": 4,
+            "usaontop2": 2,
+            "404not_found": 1,
+            "nxt_nino": 1
+        },
+        "Changes": [
+            23,
+            -7
+        ]
+    },
+    "2026-03-23": {
+        "WrsGained": {
+            "12437341": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9657332",
+                    "Time": 8600,
+                    "RecordDate": "2025-03-22 17:45:16"
+                },
+                "New": {
+                    "PlayerLogin": "baked_alaska",
+                    "PlayerId": null,
+                    "Time": 8590,
+                    "RecordDate": "2026-03-22 22:10:28"
+                },
+                "Delta": -10,
+                "Age": 365
+            },
+            "11372965": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "6394068",
+                    "Time": 6960,
+                    "RecordDate": "2024-04-27 10:11:42"
+                },
+                "New": {
+                    "PlayerLogin": "baked_alaska",
+                    "PlayerId": null,
+                    "Time": 6720,
+                    "RecordDate": "2026-03-19 11:30:19"
+                },
+                "Delta": -240,
+                "Age": 691
+            }
+        },
+        "WrsLost": {},
+        "Total": 751,
+        "MLStats": {
+            "fillipp_": 23,
+            "baked_alaska": 89,
+            "specul4rr": 12,
+            "exix77": 115,
+            "dzamal1s": 89,
+            "lemon_playz": 19,
+            "humblytoxic": 9,
+            "violynos": 7,
+            "_lucida": 74,
+            "ayeewake": 48,
+            "rumbleiq": 27,
+            "king_ate": 7,
+            "samurai_master123": 15,
+            "w1ndspe3dyy": 35,
+            "pseudodragon": 7,
+            "julianstephens96": 3,
+            "wildmagnusdk": 33,
+            "nems_hat_": 21,
+            "randomvidzz321": 25,
+            "dadvik": 20,
+            "pieplay08": 3,
+            "rahzool": 8,
+            "corey_123344": 11,
+            "jfnoahtm": 4,
+            "rogamer": 2,
+            "thenlo_tm": 14,
+            "locklurz": 5,
+            "t3v5": 1,
+            "noehehe": 7,
+            "thesuperbacon53": 2,
+            "lzaps": 5,
+            "crims0nwr4th": 3,
+            "apextmnf": 4,
+            "usaontop2": 2,
+            "404not_found": 1,
+            "nxt_nino": 1
+        },
+        "Changes": [
+            2,
+            0
+        ]
+    },
+    "2026-03-25": {
+        "WrsGained": {
+            "12982593": {
+                "Old": {
+                    "PlayerLogin": "redgreendevil",
+                    "PlayerId": null,
+                    "Time": 13780,
+                    "RecordDate": "2025-11-16 08:40:48"
+                },
+                "New": {
+                    "PlayerLogin": "baked_alaska",
+                    "PlayerId": null,
+                    "Time": 13680,
+                    "RecordDate": "2026-03-23 11:44:24"
+                },
+                "Delta": -100,
+                "Age": 127
+            }
+        },
+        "WrsLost": {},
+        "Total": 752,
+        "MLStats": {
+            "fillipp_": 23,
+            "baked_alaska": 91,
+            "specul4rr": 12,
+            "exix77": 115,
+            "dzamal1s": 89,
+            "lemon_playz": 19,
+            "humblytoxic": 9,
+            "violynos": 7,
+            "_lucida": 74,
+            "ayeewake": 47,
+            "rumbleiq": 27,
+            "king_ate": 7,
+            "samurai_master123": 15,
+            "w1ndspe3dyy": 35,
+            "pseudodragon": 7,
+            "julianstephens96": 3,
+            "wildmagnusdk": 33,
+            "nems_hat_": 21,
+            "randomvidzz321": 25,
+            "dadvik": 20,
+            "pieplay08": 3,
+            "rahzool": 8,
+            "corey_123344": 11,
+            "jfnoahtm": 4,
+            "rogamer": 2,
+            "thenlo_tm": 14,
+            "locklurz": 5,
+            "t3v5": 1,
+            "noehehe": 7,
+            "thesuperbacon53": 2,
+            "lzaps": 5,
+            "crims0nwr4th": 3,
+            "apextmnf": 4,
+            "usaontop2": 2,
+            "404not_found": 1,
+            "nxt_nino": 1
+        },
+        "Changes": [
+            1,
+            0
+        ]
+    },
+    "2026-03-29": {
+        "WrsGained": {
+            "10405607": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9337880",
+                    "Time": 20780,
+                    "RecordDate": "2023-04-12 16:23:56"
+                },
+                "New": {
+                    "PlayerLogin": "exix77",
+                    "PlayerId": null,
+                    "Time": 19030,
+                    "RecordDate": "2026-03-25 09:00:20"
+                },
+                "Delta": -1750,
+                "Age": 1077
+            },
+            "10452502": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "8782571",
+                    "Time": 16260,
+                    "RecordDate": "2024-08-01 16:33:14"
+                },
+                "New": {
+                    "PlayerLogin": "baked_alaska",
+                    "PlayerId": null,
+                    "Time": 15790,
+                    "RecordDate": "2026-03-25 11:24:27"
+                },
+                "Delta": -470,
+                "Age": 600
+            },
+            "11772300": {
+                "Old": {
+                    "PlayerLogin": "mc_maddin",
+                    "PlayerId": null,
+                    "Time": 6030,
+                    "RecordDate": "2024-08-18 10:58:53"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9530566",
+                    "Time": 4980,
+                    "RecordDate": "2026-03-24 00:00:39"
+                },
+                "Delta": -1050,
+                "Age": 582
+            },
+            "10232956": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "8699480",
+                    "Time": 6470,
+                    "RecordDate": "2023-03-06 08:02:28"
+                },
+                "New": {
+                    "PlayerLogin": "exix77",
+                    "PlayerId": null,
+                    "Time": 6400,
+                    "RecordDate": "2026-03-25 09:02:48"
+                },
+                "Delta": -70,
+                "Age": 1115
+            },
+            "10442779": {
+                "Old": {
+                    "PlayerLogin": null,
+                    "PlayerId": "9641263",
+                    "Time": 127310,
+                    "RecordDate": "2023-04-28 18:28:23"
+                },
+                "New": {
+                    "PlayerLogin": "exix77",
+                    "PlayerId": null,
+                    "Time": 95880,
+                    "RecordDate": "2026-03-25 08:35:21"
+                },
+                "Delta": -31430,
+                "Age": 1061
+            }
+        },
+        "WrsLost": {},
+        "Total": 757,
+        "MLStats": {
+            "fillipp_": 23,
+            "baked_alaska": 93,
+            "specul4rr": 12,
+            "exix77": 119,
+            "dzamal1s": 89,
+            "lemon_playz": 19,
+            "humblytoxic": 9,
+            "violynos": 7,
+            "_lucida": 73,
+            "ayeewake": 47,
+            "rumbleiq": 27,
+            "king_ate": 7,
+            "samurai_master123": 15,
+            "w1ndspe3dyy": 35,
+            "pseudodragon": 7,
+            "julianstephens96": 3,
+            "wildmagnusdk": 33,
+            "nems_hat_": 21,
+            "randomvidzz321": 25,
+            "dadvik": 20,
+            "pieplay08": 3,
+            "rahzool": 8,
+            "corey_123344": 11,
+            "jfnoahtm": 4,
+            "rogamer": 2,
+            "thenlo_tm": 14,
+            "locklurz": 5,
+            "t3v5": 1,
+            "noehehe": 7,
+            "thesuperbacon53": 2,
+            "lzaps": 5,
+            "crims0nwr4th": 3,
+            "apextmnf": 4,
+            "usaontop2": 2,
+            "404not_found": 1,
+            "nxt_nino": 1
+        },
+        "Changes": [
+            5,
+            0
+        ]
+    },
+    "2026-03-30": {
+        "WrsGained": {},
+        "WrsLost": {},
+        "Total": 757,
+        "MLStats": {
+            "fillipp_": 23,
+            "baked_alaska": 93,
+            "specul4rr": 12,
+            "exix77": 119,
+            "dzamal1s": 89,
+            "lemon_playz": 19,
+            "humblytoxic": 9,
+            "violynos": 7,
+            "_lucida": 73,
+            "ayeewake": 47,
+            "rumbleiq": 27,
+            "king_ate": 7,
+            "samurai_master123": 15,
+            "w1ndspe3dyy": 35,
+            "pseudodragon": 7,
+            "julianstephens96": 3,
+            "wildmagnusdk": 33,
+            "nems_hat_": 21,
+            "randomvidzz321": 25,
+            "dadvik": 20,
+            "pieplay08": 3,
+            "rahzool": 8,
+            "corey_123344": 11,
+            "jfnoahtm": 4,
+            "rogamer": 2,
+            "thenlo_tm": 14,
+            "locklurz": 5,
+            "t3v5": 1,
+            "noehehe": 7,
+            "thesuperbacon53": 2,
+            "lzaps": 5,
+            "crims0nwr4th": 3,
+            "apextmnf": 4,
+            "usaontop2": 2,
+            "404not_found": 1,
+            "nxt_nino": 1
+        },
+        "Changes": [
+            0,
+            0
+        ]
+    },
+    "2026-04-08": {
+        "WrsGained": {
+            "12681912": {
+                "Old": {
+                    "PlayerLogin": "hawksley_",
+                    "PlayerId": null,
+                    "Time": 19930,
+                    "RecordDate": "2025-06-23 11:52:43"
+                },
+                "New": {
+                    "PlayerLogin": null,
+                    "PlayerId": "10771822",
+                    "Time": 15860,
+                    "RecordDate": "2026-03-25 18:08:22"
+                },
+                "Delta": -4070,
+                "Age": 275
+            }
+        },
+        "WrsLost": {},
+        "Total": 758,
+        "MLStats": {
+            "fillipp_": 23,
+            "baked_alaska": 93,
+            "specul4rr": 12,
+            "exix77": 120,
+            "dzamal1s": 89,
+            "lemon_playz": 19,
+            "humblytoxic": 9,
+            "_lucida": 74,
+            "ayeewake": 47,
+            "rumbleiq": 27,
+            "king_ate": 7,
+            "samurai_master123": 15,
+            "w1ndspe3dyy": 35,
+            "pseudodragon": 7,
+            "julianstephens96": 3,
+            "wildmagnusdk": 33,
+            "nems_hat_": 21,
+            "randomvidzz321": 25,
+            "dadvik": 20,
+            "pieplay08": 3,
+            "rahzool": 8,
+            "corey_123344": 11,
+            "jfnoahtm": 4,
+            "rogamer": 2,
+            "thenlo_tm": 14,
+            "locklurz": 5,
+            "t3v5": 1,
+            "noehehe": 7,
+            "thesuperbacon53": 2,
+            "lzaps": 5,
+            "crims0nwr4th": 3,
+            "apextmnf": 4,
+            "violynos": 6,
+            "usaontop2": 2,
+            "404not_found": 1,
+            "nxt_nino": 1
+        },
+        "Changes": [
+            1,
+            0
+        ]
+    }
+}

@@ -6478,7 +6478,7 @@
             "Login": "nxt_nino",
             "Id": null,
             "Nickname": "\u0438\u0455\u0493\u0482Sylvi\u03b1!",
-            "TeamML": false
+            "TeamML": true
         },
         "nystyry": {
             "Login": "nystyry",
@@ -9586,7 +9586,7 @@
             "Login": "usaontop2",
             "Id": null,
             "Nickname": "hexlimit",
-            "TeamML": false
+            "TeamML": true
         },
         "useles5": {
             "Login": "useles5",

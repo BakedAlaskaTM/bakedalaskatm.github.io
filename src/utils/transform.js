@@ -104,8 +104,9 @@ export function buildWrStats(worldRecords, mlInfo, players) {
 function lookupPlayer(login, id, playerInfo) {
     if (!playerInfo) return null;
     for (const player of Object.values(playerInfo)) {
-        if (login === player.Login) return player;
-        if (id === player.TMX) return player;
+        if (login && player.Dedimania && player.Dedimania.includes(login)) return player;
+        if (login && login === player.Login) return player;
+        if (id && player.TMX && player.TMX.map(String).includes(String(id))) return player;
     }
     return null;
 }

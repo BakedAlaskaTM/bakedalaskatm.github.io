@@ -1,6 +1,10 @@
 import React from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 
-export default function Header({ activeTab, setActiveTab, progress }) {
+export default function Header({ progress }) {
+  const location = useLocation();
+  const isHomeActive = location.pathname === '/';
+  const isStatsActive = location.pathname.startsWith('/stats') || location.pathname.startsWith('/track') || location.pathname.startsWith('/player');
   return (
     <header className="w-11/12 max-w-6xl mx-auto mt-8 mb-6 p-6 shadow-2xl bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-xl">
       <h1 className="text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-6 drop-shadow-md">
@@ -8,30 +12,41 @@ export default function Header({ activeTab, setActiveTab, progress }) {
       </h1>
       <nav className="flex items-center justify-between py-3 px-4 border border-slate-700/50 bg-slate-900/50 rounded-lg shadow-inner">
         <div className="flex gap-3">
-          <button
-            onClick={() => setActiveTab('home')}
-            className={`px-5 py-2 rounded-md font-medium text-sm transition-all shadow-sm ${
-              activeTab === 'home'
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) => `px-5 py-2 rounded-md font-medium text-sm transition-all shadow-sm ${
+              isActive
                 ? 'text-white bg-blue-600 hover:bg-blue-500'
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700'
             }`}
           >
             Home
-          </button>
-          <button
-            onClick={() => setActiveTab('stats')}
+          </NavLink>
+          <NavLink
+            to="/stats"
             className={`px-5 py-2 rounded-md font-medium text-sm transition-all shadow-sm ${
-              activeTab === 'stats'
+              isStatsActive
                 ? 'text-white bg-blue-600 hover:bg-blue-500'
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700'
             }`}
           >
             Stats
-          </button>
+          </NavLink>
+          <NavLink
+            to="/activity"
+            className={({ isActive }) => `px-5 py-2 rounded-md font-medium text-sm transition-all shadow-sm ${
+              isActive
+                ? 'text-white bg-blue-600 hover:bg-blue-500'
+                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700'
+            }`}
+          >
+            Activity
+          </NavLink>
         </div>
       </nav>
       
-      {activeTab === 'home' && progress && (
+      {isHomeActive && progress && (
         <div className="mt-8 px-4">
           <div className="flex justify-between mb-2 text-sm font-semibold text-slate-300">
             <span>World Records Progress</span>

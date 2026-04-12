@@ -1,8 +1,11 @@
 import React, { useEffect, useState, useMemo } from 'react';
+import { Routes, Route, useNavigate, useParams, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import LeaderboardTable from './components/LeaderboardTable';
 import { fetchAllData } from './utils/store';
 import { buildTracksTableData, buildWrStats, buildRecordsRows, formatTime } from './utils/transform';
+import WrProgressChart from './components/WrProgressChart';
+import ActivityView from './components/ActivityView';
 import { ExternalLink } from 'lucide-react';
 
 // Tooltip Component for hover info
@@ -21,8 +24,7 @@ export default function App() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const [activeTab, setActiveTab] = useState('home'); // 'home', 'stats', 'map'
-    const [activeTrackId, setActiveTrackId] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchAllData()
@@ -49,10 +51,8 @@ export default function App() {
         return { current, total };
     }, [storeData]);
 
-    const handleTrackClick = (trackId) => {
-        setActiveTrackId(trackId);
-        setActiveTab('map');
-    };
+    const handleTrackClick = (trackId) => navigate(`/track/${trackId}`);
+    const handlePlayerClick = (login) => navigate(`/player/${login}`);
 
     if (loading) return <div className="min-h-screen grid place-items-center text-slate-300 text-xl font-medium tracking-wide flex-col gap-4"><div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>Loading Data...</div>;
     if (error) return <div className="text-red-400 p-8 text-center text-xl">Error: {error}</div>;
@@ -63,33 +63,49 @@ export default function App() {
             <div className="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-600/10 blur-[120px] pointer-events-none"></div>
             <div className="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-600/10 blur-[120px] pointer-events-none"></div>
 
-            <Header
-                activeTab={activeTab === 'map' ? null : activeTab}
-                setActiveTab={(tab) => {
-                    setActiveTab(tab);
-                    setActiveTrackId(null);
-                }}
-                progress={progress}
-            />
+            <Header progress={progress} />
 
             <main className="w-11/12 max-w-6xl mx-auto relative z-10 transition-all">
-                {activeTab === 'map' && (
-                    <button
-                        onClick={() => setActiveTab('stats')}
-                        className="mb-6 px-4 py-2 font-semibold text-sm rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition-colors border border-slate-700/50 flex items-center gap-2 shadow-lg"
-                    >
-                        &larr; Back to tracks
-                    </button>
-                )}
-
                 <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                    {activeTab === 'home' && <StatsView storeData={storeData} />}
-                    {activeTab === 'stats' && <TracksView storeData={storeData} onTrackClick={handleTrackClick} />}
-                    {activeTab === 'map' && <RecordsView trackId={activeTrackId} storeData={storeData} />}
+                    <Routes>
+                        <Route path="/" element={<StatsView storeData={storeData} onPlayerClick={handlePlayerClick} />} />
+                        <Route path="/stats" element={<TracksView storeData={storeData} onTrackClick={handleTrackClick} />} />
+                        
+                        <Route path="/track/:trackId" element={
+                            <>
+                                <button onClick={() => navigate(-1)} className="mb-6 px-4 py-2 font-semibold text-sm rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition-colors border border-slate-700/50 flex items-center gap-2 shadow-lg w-max">
+                                    &larr; Back to tracks
+                                </button>
+                                <RecordsViewRouted storeData={storeData} />
+                            </>
+                        } />
+
+                        <Route path="/player/:playerLogin" element={
+                            <>
+                                <button onClick={() => navigate(-1)} className="mb-6 px-4 py-2 font-semibold text-sm rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition-colors border border-slate-700/50 flex items-center gap-2 shadow-lg w-max">
+                                    &larr; Back to player rankings
+                                </button>
+                                <PlayerViewRouted storeData={storeData} onTrackClick={handleTrackClick} />
+                            </>
+                        } />
+
+                        <Route path="/activity" element={<ActivityView storeData={storeData} />} />
+                        <Route path="*" element={<Navigate to="/" replace />} />
+                    </Routes>
                 </div>
             </main>
         </div>
     );
+}
+
+function RecordsViewRouted({ storeData }) {
+    const { trackId } = useParams();
+    return <RecordsView trackId={trackId} storeData={storeData} />;
+}
+
+function PlayerViewRouted({ storeData, onTrackClick }) {
+    const { playerLogin } = useParams();
+    return <PlayerView storeData={storeData} playerLogin={playerLogin} onTrackClick={onTrackClick} />;
 }
 
 // ------------------------------------------------------------------------------------------------ //
@@ -199,14 +215,14 @@ function TracksView({ storeData, onTrackClick }) {
     return <LeaderboardTable data={data} columns={columns} />;
 }
 
-function StatsView({ storeData }) {
+function StatsView({ storeData, onPlayerClick }) {
     const data = useMemo(() => buildWrStats(storeData.worldRecords, storeData.mlInfo, storeData.players), [storeData]);
 
     const columns = useMemo(() => [
         {
             header: 'Player',
             accessorKey: 'nickname',
-            cell: ({ row, getValue }) => <Tooltip text={row.original.login}><span className="font-bold text-lg">{getValue()}</span></Tooltip>
+            cell: ({ row, getValue }) => <Tooltip text={row.original.login}><span className="font-bold text-lg cursor-pointer text-slate-200 hover:text-blue-400 hover:underline transition-colors">{getValue()}</span></Tooltip>
         },
         {
             header: '# WRs',
@@ -216,7 +232,50 @@ function StatsView({ storeData }) {
         }
     ], []);
 
-    return <LeaderboardTable data={data} columns={columns} initialSort={{ id: 'count', desc: true }} pageSize={50} />;
+    return (
+        <div className="flex flex-col">
+            <WrProgressChart summaryStats={storeData.summaryStats} />
+            <LeaderboardTable data={data} columns={columns} onRowClick={(row) => onPlayerClick(row.login)} initialSort={{ id: 'count', desc: true }} pageSize={50} />
+        </div>
+    );
+}
+
+function PlayerView({ storeData, playerLogin, onTrackClick }) {
+    const filteredStoreData = useMemo(() => {
+        const mlData = storeData.mlInfo[playerLogin] || {};
+        const playerLogins = mlData.Dedimania || [playerLogin];
+        // Handle TMX property matching (converting to string since ID check dynamically expects string/num variations)
+        const playerTmxIds = (mlData.TMX || []).map(String);
+
+        // Filter maps where WR was done by any of these user identities
+        const filteredWrKeys = Object.keys(storeData.worldRecords || {}).filter(trackId => {
+            const wr = storeData.worldRecords[trackId];
+            if (!wr) return false;
+            
+            if (wr.Source === 'dedi' && playerLogins.includes(wr.PlayerLogin)) return true;
+            if (wr.Source === 'tmx' && playerTmxIds.includes(String(wr.PlayerId))) return true;
+            return false;
+        });
+
+        // Pack them back exactly into the format expected by tracks computation
+        const filteredWr = {};
+        const filteredTracks = {};
+        for(let id of filteredWrKeys) {
+            filteredWr[id] = storeData.worldRecords[id];
+            if (storeData.tracks[id]) filteredTracks[id] = storeData.tracks[id];
+        }
+
+        return { ...storeData, worldRecords: filteredWr, tracks: filteredTracks };
+    }, [storeData, playerLogin]);
+
+    return (
+        <div className="flex flex-col animate-in fade-in slide-in-from-bottom-2 duration-300">
+            <WrProgressChart summaryStats={storeData.summaryStats} playerLogin={playerLogin} />
+            <div className="w-full">
+                <TracksView storeData={filteredStoreData} onTrackClick={onTrackClick} />
+            </div>
+        </div>
+    );
 }
 
 function RecordsView({ trackId, storeData }) {
